@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>jquery穿梭列表左右导入数据</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="ty-transfer mt20 ml20" id="ued-transfer-1">
+    <div class="fl ty-transfer-list transfer-list-left">
+        <div class="ty-transfer-list-head">
+            待选属性
+        </div>
+        <div class="ty-transfer-list-body">
+            <ul class="ty-tree-select">
+                <li>
+                    <div class="ty-tree-div">
+                        <label class="tyue-checkbox-wrapper">
+                            <span class="tyue-checkbox">
+                                <input type="checkbox" class="tyue-checkbox-input" id="tyue-checkbox-blue">
+                                <span class="tyue-checkbox-circle">
+                                </span>
+                            </span>
+                            <span class="tyue-checkbox-txt" title="价格">
+                                价格
+                            </span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="ty-tree-div">
+                        <label class="tyue-checkbox-wrapper">
+                            <span class="tyue-checkbox">
+                                <input type="checkbox" class="tyue-checkbox-input" id="tyue-checkbox-blue">
+                                <span class="tyue-checkbox-circle">
+                                </span>
+                            </span>
+                            <span class="tyue-checkbox-txt" title="规格">
+                                规格
+                            </span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="ty-tree-div">
+                        <label class="tyue-checkbox-wrapper">
+                            <span class="tyue-checkbox">
+                                <input type="checkbox" class="tyue-checkbox-input" id="tyue-checkbox-blue">
+                                <span class="tyue-checkbox-circle">
+                                </span>
+                            </span>
+                            <span class="tyue-checkbox-txt" title="尺寸">
+                                尺寸
+                            </span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="ty-tree-div">
+                        <label class="tyue-checkbox-wrapper">
+                            <span class="tyue-checkbox">
+                                <input type="checkbox" class="tyue-checkbox-input" id="tyue-checkbox-blue">
+                                <span class="tyue-checkbox-circle">
+                                </span>
+                            </span>
+                            <span class="tyue-checkbox-txt" title="颜色">
+                                颜色
+                            </span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="ty-transfer-list-foot">
+            <div class="ty-tree-div">
+                <div class="tyc-check-blue fl">
+                    <input type="checkbox" class="transfer-all-check" id="tyc-check-blue">
+                    <span>
+                    </span>
+                </div>
+                <div class="ty-tree-text">
+                    全选
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fl ty-transfer-operation">
+        <span class="ty-transfer-btn-toright to-switch">
+        </span>
+        <span class="ty-transfer-btn-toleft to-switch">
+        </span>
+    </div>
+    <div class="fl ty-transfer-list transfer-list-right">
+        <div class="ty-transfer-list-head">
+            已选属性
+        </div>
+        <div class="ty-transfer-list-body">
+            <ul class="ty-tree-select">
+                <li>
+                    <div class="ty-tree-div">
+                        <label class="tyue-checkbox-wrapper">
+                            <span class="tyue-checkbox">
+                                <input type="checkbox" class="tyue-checkbox-input" id="tyue-checkbox-blue">
+                                <span class="tyue-checkbox-circle">
+                                </span>
+                            </span>
+                            <span class="tyue-checkbox-txt" title="重量">
+                                重量
+                            </span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="ty-tree-div">
+                        <label class="tyue-checkbox-wrapper">
+                            <span class="tyue-checkbox">
+                                <input type="checkbox" class="tyue-checkbox-input" id="tyue-checkbox-blue">
+                                <span class="tyue-checkbox-circle">
+                                </span>
+                            </span>
+                            <span class="tyue-checkbox-txt" title="库存">
+                                库存
+                            </span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="ty-tree-div">
+                        <label class="tyue-checkbox-wrapper">
+                            <span class="tyue-checkbox">
+                                <input type="checkbox" class="tyue-checkbox-input" id="tyue-checkbox-blue">
+                                <span class="tyue-checkbox-circle">
+                                </span>
+                            </span>
+                            <span class="tyue-checkbox-txt" title="供应商">
+                               供应商
+                            </span>
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="ty-tree-div">
+                        <label class="tyue-checkbox-wrapper">
+                            <span class="tyue-checkbox">
+                                <input type="checkbox" class="tyue-checkbox-input" id="tyue-checkbox-blue">
+                                <span class="tyue-checkbox-circle">
+                                </span>
+                            </span>
+                            <span class="tyue-checkbox-txt" title="URL">
+                                URL
+                            </span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="ty-transfer-list-foot">
+            <div class="ty-tree-div">
+                <div class="tyc-check-blue fl">
+                    <input type="checkbox" class="transfer-all-check" id="tyc-check-blue">
+                    <span>
+                    </span>
+                </div>
+                <div class="ty-tree-text">
+                    全选
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearboth">
+    </div>
+            
+</div>
+        
+<!--过滤筛选 end-->
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="Transfer.js"></script>
+<script type="text/javascript">
+    $("#ued-transfer-1").transferItem();
+</script>
+</body>
+</html>
