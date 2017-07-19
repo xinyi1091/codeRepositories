@@ -22,7 +22,7 @@
     var grade = ['province', 'city', 'district'];
     var defaults = {
         dataJson: null,
-        selectpattern: [{
+        selectpattern: [{ //用于存储的字段名和默认提示
                 field: 'userProvinceId',
                 placeholder: '请选择省份'
             },
@@ -35,17 +35,17 @@
                 placeholder: '请选择区县'
             }
         ],
-        shorthand: false,
-        storage: true,
-        autoSelected: true,
-        renderMode: true,
-        keyboard: false,
-        code: false,
-        search: true,
-        level: 3,
-        onInitialized: function () {},
-        onClickBefore: function () {},
-        onForbid: function () {}
+        shorthand: false,//城市简写
+        storage: true,//存储的值是数字还是中文，默认是(true)数字
+        autoSelected: true,//是否自动选择第一项，默认(true)
+        renderMode: true,// 模拟的还是原生的;只在type是selector才有效,默认是(true)模拟
+        keyboard: false,//不开启键盘事件
+        code: false,//不输出城市区号
+        search: true,//开启搜索功能
+        level: 3,//3列
+        onInitialized: function () {},//组件初始化后触发的回调函数
+        onClickBefore: function () {},//组件点击显示列表触发的回调函数
+        onForbid: function () {}// 存在class名forbid的禁止点击的回调
     };
 
     function Citypicker(options, selector) {
