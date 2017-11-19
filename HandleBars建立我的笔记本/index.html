@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Handlebars</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/handlebars.js"></script>
+</head>
+<body>
+    <div class="banner">
+        <h1>我的笔记本</h1>
+        <h3>你的指尖，有改变世界的力量</h3>
+    </div>
+    <script id="class-template" type="text/x-handlebars-template">
+        <ul>
+            {{#each this}}
+            <li data-id = "{{id}}">
+                <div class="innerbox">
+                    <img src="{{image}}" alt="{{title}}">
+                    <div class="titlediv">
+                        <span class="title">{{title}}</span>
+                        {{#compare hasnote 1}}<span class="note">(有笔记)</span>{{/compare}}
+                    </div>
+                    <div class="subtitle">
+                        {{subtitle}}
+                    </div>
+                    <div class="subtitle {{#long timespan}} long{{else}}short{{/long}}">
+                        时间:{{timespan}}
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </script>
+    <script id="pag-template" type="text/x-handlebars-template">
+        <ul>
+            {{#each this}}
+            <li data-id={{index}} {{#if cur}}class="cur"{{/if}}
+             {{#if clickable}}class="clickable"{{/if}}
+            >{{{text}}}</li>
+            {{/each }}
+        </ul>
+    </script>
+    <!-- 课程列表 -->
+    <script id="chapter-template" type="text/x-handlebars-template">
+            <ul class="titleul">
+                {{#each this}}
+                <li class="titleli">
+                    <div class="title">{{addone @index}}.{{title}}</div>
+                    <ul>
+                        {{#each subTitle}}
+                        <li class="subtitle">
+                            {{addone @../index}}-{{addone @index}}、
+                            <a href="http://www.imooc.com/{{titletype}}/{{mid}}" target="_blank">{{title}}</a>
+                            {{#if timespan}}<span class="time">({{timespan}})</span>{{/if}}
+                            {{#compare titletype 'code'}}
+                            <span class="type">
+                               (编程)
+                            </span>
+                            {{else}}
+                                {{#compare titletype 'ceping'}}
+                                <span class="type">
+                                   (练习)
+                                </span>
+                                {{/compare}}
+                            {{/compare}}
+                        </li>
+                        {{/each}}
+                    </ul>
+                </li>
+                {{/each}}
+            </ul>
+    </script>
+    <!-- 笔记的渲染 -->
+    <script id="note-template" type="text/x-handlebars-template">
+        <ul class="noteul">
+            {{#each this}}
+                <li>
+                    <div class="time">{{{formatDate notetime}}}</div>
+                    <div class="content">
+                        {{{content}}}
+                    </div>
+                </li>
+            {{/each}}
+            </ul>
+    </script>
+    <div class="classes">
+        
+    </div>
+    <!-- 分页组件 -->
+    <div class="pag" id="pag">
+        
+    </div>
+    <!-- 遮罩 -->
+    <div class="overlap">
+        
+    </div>
+    <!-- 笔记本 -->
+    <div class="notedetail">
+        <!-- 章节部分 -->
+        <div class="chapterdiv" id="chapterdiv">
+            
+        </div>
+        <!-- 中间 -->
+        <div class="notemiddle"></div>
+        <!-- 右边 -->
+        <div class="notediv" id="notediv">
+
+        </div>
+    </div>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
